@@ -42,7 +42,7 @@ const CreateGroup = ({ handleBack,setIsGoup }) => {
               onClick={handleBack}
               className="cursor-pointer text-2xl font-bold"
             />
-            <p className="text-xl font-semibold">Add Group Participats</p>
+            <p className="text-xl font-semibold">Add Group Participants</p>
           </div>
 
           <div className="relative  bg-white py-4 px-3">

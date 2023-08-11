@@ -65,7 +65,7 @@ const token = localStorage.getItem("token");
             <input
               className="py-2 px-3 outline outline-green-600 w-full rounded-md border-1"
               type="text"
-              placeholder="Enter username"
+              placeholder="Enter your Username"
               name="full_name"
               onChange={(e) => handleChange(e)}
               value={inputData.username}
@@ -86,7 +86,7 @@ const token = localStorage.getItem("token");
             <p className="mb-2">Password</p>
             <input
               className="py-2 px-2 outline outline-green-600 w-full rounded-md border-1"
-              type="text"
+              type="password"
               placeholder="Enter your Password"
               name="password"
               onChange={(e) => handleChange(e)}
@@ -95,7 +95,7 @@ const token = localStorage.getItem("token");
           </div>
           <div>
             <input
-              className="py-[0.7rem] px-3 w-full rounded-md bg-green-600 text-white mt-3"
+              className="py-[0.7rem] px-3 w-full rounded-md bg-green-600 hover:bg-green-700 text-white mt-3 cursor-pointer"
               type="Submit"
               placeholder="Enter your Password"
               value={"Signup"}
@@ -103,7 +103,7 @@ const token = localStorage.getItem("token");
             />
           </div>
         </form>
-        <div className="flex space-x-3 item-center mt-5">
+        <div className="flex space-x-3 items-center mt-5 justify-center">
           <p className="">Already Have Account?</p>
           <p
             onClick={() => navigate("/login")}
