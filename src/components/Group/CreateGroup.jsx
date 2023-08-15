@@ -50,7 +50,7 @@ const CreateGroup = ({ handleBack,setIsGoup }) => {
               {groupMember.size > 0 &&
                 Array.from(groupMember).map((item) => (
                   <SelectedMember
-                    handleRemoveMember={() => handleRemoveMember(item)}
+                    handleRemoveMember={(item) => handleRemoveMember(item)}
                     member={item}
                   />
                 ))}
