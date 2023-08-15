@@ -179,9 +179,9 @@ const HomePage = () => {
   });
 
   const onMessageRecive = (payload) => {
-    console.log("onMessageRecive ............. -----------", payload);
+    console.log("onMessageRecieve: ", payload);
 
-    console.log("recive message -  - - - - - - -  -", JSON.parse(payload.body));
+    console.log("Receive message: ", JSON.parse(payload.body));
 
     const recievedMessage = JSON.parse(payload.body);
 
@@ -292,7 +292,7 @@ const HomePage = () => {
               </div>
               {/* all user */}
 
-              <div className="bg-white overflow-y-scroll h-[76.8vh]">
+              <div className="bg-white overflow-y-scroll h-[74.9vh]">
                 {querys &&
                   auth.searchUser?.map((item, index) => (
                     <div
@@ -368,10 +368,9 @@ const HomePage = () => {
                 src="https://res.cloudinary.com/zarmariya/image/upload/v1662264838/whatsapp_multi_device_support_update_image_1636207150180-removebg-preview_jgyy3t.png"
                 alt=""
               />
-              <h1 className="text-4xl text-gray-600">WhatsApp Web</h1>
+              <h1 className="text-4xl text-gray-600">ChatApp Web</h1>
               <p className=" my-9">
-                send and reveive message without keeping your phone online. Use
-                WhatsApp on Up to 4 Linked devices and 1 phone at the same time.
+                Send and receive messages securely through ChatApp Web.
               </p>
             </div>
           </div>
