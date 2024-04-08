@@ -35,10 +35,10 @@ const Login = () => {
     if (token) dispatch(currentUser(token));
   }, [token]);
 
-  //redirect to main page if register success
+  //redirect to main page if login success
   useEffect(() => {
     if (auth.reqUser) {
-      navigate("/");
+      navigate("/home");
     }
   }, [auth.reqUser]);
 
@@ -51,12 +51,13 @@ const Login = () => {
   return (
     <div>
       <div className="flex justify-center min-h-screen items-center">
-        <div className="w-[30%] p-10  shadow-md bg-white">
+        <div className="w-[30%] p-10  shadow-md bg-white rounded-lg">
+        <h1 className="text-center text-lg">Chat App</h1>
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <p className="mb-2">Email</p>
               <input
-                className="py-2 px-3 outline outline-green-600 w-full rounded-md border-1"
+                className="py-2 px-3 outline outline-blue-500 w-full rounded-md border-1"
                 type="text"
                 placeholder="Enter your Email"
                 name="email"
@@ -67,7 +68,7 @@ const Login = () => {
             <div>
               <p className="mb-2">Password</p>
               <input
-                className="py-2 px-2 outline outline-green-600 w-full rounded-md border-1"
+                className="py-2 px-2 outline outline-blue-500 w-full rounded-md border-1"
                 type="password"
                 placeholder="Enter your Password"
                 name="password"
@@ -77,7 +78,7 @@ const Login = () => {
             </div>
             <div>
               <input
-                className="py-[0.7rem] px-3 w-full rounded-md bg-green-600 hover:bg-green-700 text-white mt-3 cursor-pointer"
+                className="py-[0.7rem] px-3 w-full rounded-md bg-blue-500 hover:bg-blue-700 text-white mt-3 cursor-pointer"
                 type="Submit"
                 placeholder="Enter your Password"
                 value={"Login"}
@@ -89,7 +90,7 @@ const Login = () => {
             <p className="">Don't have an Account?</p>
             <p
               onClick={() => navigate("/Signup")}
-              className="text-blue-500 hover:text-blue-800 cursor-pointer"
+              className="text-blue-500 hover:text-blue-700 cursor-pointer"
             >
               Sign Up
             </p>

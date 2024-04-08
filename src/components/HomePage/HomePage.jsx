@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+// npm/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { BiCommentDetail } from "react-icons/bi";
 import {
@@ -29,7 +29,7 @@ import SockJS from "sockjs-client/dist/sockjs";
 import { over } from "stompjs";
 import CreateGroup from "../Group/CreateGroup";
 
-let soket, selectedChatCompare;
+let socket, selectedChatCompare;
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -166,12 +166,12 @@ const HomePage = () => {
         `/user/${currentChat?.id}/private`,
         onMessageRecive
       );
-      // stompClient.subscribe('/user/'+currentChat?.id+'/private', onMessageRecive);
+      stompClient.subscribe('/user/'+currentChat?.id+'/private', onMessageRecive);
       stompClient.subscribe(
         "/group/" + currentChat.id.toString(),
         onMessageRecive
       );
-      // stompClient.subscribe('/group/public', onMessageRecive);
+      stompClient.subscribe('/group/public', onMessageRecive);
       return () => {
         subscription.unsubscribe();
       };
@@ -200,8 +200,8 @@ const HomePage = () => {
         {},
         JSON.stringify(value)
       );
-      // stompClient.send("/app/message", {}, JSON.stringify(value));
-      // setMessages("")
+      stompClient.send("/app/message", {}, JSON.stringify(value));
+      setMessages("")
     }
   };
 
@@ -230,7 +230,7 @@ const HomePage = () => {
 
   return (
     <div className="relative">
-      <div className="py-14 bg-[#00a884] w-full"></div>
+      <div className="py-14 bg-blue-500 w-full"></div>
 
       <div className="absolute w-[97vw] h-[94vh] bg-[#f0f2f5] top-6 left-6 flex">
         <div className="w-[30%] bg-[#e8e9ec] h-full">
@@ -362,10 +362,10 @@ const HomePage = () => {
         </div>
 
         {!currentChat && (
-          <div className="w-[70%] flex flex-col items-center justify-center">
+          <div className="w-[75%] flex flex-col items-center justify-center">
             <div className="max-w-[70%] text-center">
               <img
-                src="https://res.cloudinary.com/zarmariya/image/upload/v1662264838/whatsapp_multi_device_support_update_image_1636207150180-removebg-preview_jgyy3t.png"
+                // src="https://res.cloudinary.com/zarmariya/image/upload/v1662264838/whatsapp_multi_device_support_update_image_1636207150180-removebg-preview_jgyy3t.png"
                 alt=""
               />
               <h1 className="text-4xl text-gray-600">ChatApp Web</h1>

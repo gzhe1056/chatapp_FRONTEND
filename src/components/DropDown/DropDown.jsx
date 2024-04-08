@@ -29,7 +29,7 @@ const handleLogout=()=>{
     dispatch(setFieldToNull(REQ_USER));
     handleClose();
     navigate("/login")
-    console.log("logout --------------- ")
+    console.log("Logout: ")
 }
   return (
     <div>
